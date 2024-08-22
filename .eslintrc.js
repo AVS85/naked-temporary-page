@@ -1,0 +1,71 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'plugin:react/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
+    jsx: true,
+    project: './tsconfig.json',
+  },
+  ignorePatterns: ['create-tag.js', '.eslintrc.js'],
+  plugins: ['react', 'sonarjs', 'prettier', 'react-hooks', '@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/no-empty-function': 'off',
+    'react/function-component-definition': 'off',
+    'max-len': ['error', { code: 140 }],
+    'comma-dangle': [2, 'always-multiline'],
+    'object-curly-newline': 'off',
+    'no-void': ['error', { allowAsStatement: true }],
+    'react/display-name': 'off',
+    'func-style': [1, 'expression'],
+    'react/react-in-jsx-scope': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'import/prefer-default-export': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'prettier/prettier': 'error',
+    'react-hooks/exhaustive-deps': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'no-use-before-define': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
+    '@typescript-eslint/no-shadow': 'off',
+    'no-shadow': 'off',
+    'react/prop-types': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': [
+      'warn',
+      {
+        handlers: ['onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp'],
+      },
+    ],
+  },
+  overrides: [
+    {
+      files: ['*.js', '*.ts'],
+      rules: {
+        'func-style': 'off',
+      },
+    },
+  ],
+};
